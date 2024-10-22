@@ -1,4 +1,16 @@
-.next
-node_modules
+# dependencies
+/node_modules
+
+# env
 .env
-out
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+.vscode

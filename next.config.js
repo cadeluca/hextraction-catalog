@@ -5,10 +5,21 @@ const withNextra = nextra({
   themeConfig: './theme.config.jsx',
 })
 
-export default {
-  ...withNextra({ reactStrictMode: true }),
-  output: 'export',
+const isProduction = process.env.NODE_ENV === "production";
+const assetPrefix = isProduction ? "/hextaction-catalog" : "";
+
+const nextConfig = {
   images: {
     unoptimized: true,
   },
+  reactStrictMode: true,
+  trailingSlash: true,
+  assetPrefix,
+  basePath: assetPrefix,
+  output: "export",
+};
+
+export default {
+  ...withNextra(),
+  ...nextConfig,
 }
