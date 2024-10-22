@@ -8,7 +8,7 @@
     "gen:mdx": "node ./data/generateMdxFiles.js",
     "gen:db": "node ./data/readCatalog.js",
     "build:full": "npm run gen:db && run gen:mdx && next build",
-    "build:lite": "next build",
+    "build": "next build",
     "clean": "rimraf .next .turbo",
     "dev": "next",
     "start": "next start"
