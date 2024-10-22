@@ -3,12 +3,14 @@ import sqlite3 from "sqlite3";
 import path from "path";
 
 // todo: generate image if applicable?
-const db = new sqlite3.Database("./src/data/data.db");
+const db = new sqlite3.Database("./data/data.db");
 
 async function fetchAndGenerateMdx() {
-  const tilesDir = path.join("./src/pages/tiles");
+  const tilesDir = path.join("./pages/tiles");
+  fs.rmSync(tilesDir, { recursive: true, force: true });
+  // should always be true
   if (!fs.existsSync(tilesDir)) {
-    fs.mkdirSync(tilesDir, { recursive: true }); // Create the directory if it doesn't exist
+    fs.mkdirSync(tilesDir, { recursive: true });
   }
 
   db.all("SELECT * FROM tiles", (error, rows) => {
@@ -19,7 +21,7 @@ async function fetchAndGenerateMdx() {
 
     rows.forEach((row) => {
       const content = generateContent(row);
-      const cleansedFileName = row.name.replace(/[\/\\:*?"<>| ]/g, "_");
+      const cleansedFileName = row.name.replace(/[\/\\:*?"',!.<>| ]/g, "_");
       const filePath = path.join(tilesDir, `${cleansedFileName}.mdx`);
 
       fs.writeFile(filePath, content, (err) => {
@@ -34,15 +36,24 @@ async function fetchAndGenerateMdx() {
 }
 
 function generateContent(row) {
+  const escapedName = row.name;
+  // const escapedName = escapeQuotes(row.name);
+  // console.log(escapedName)
+
   return `---
-title: ${row.name}
-sidebarTitle: ${row.name}
+sidebarTitle: "${escapedName}"
 ---
 
 temporary text:
 # ${row.name}
 ${row.id}
 `;
+}
+
+function escapeQuotes(str) {
+  return str.replace(/['"]/g, (match) => {
+    return match === '"' ? '\\"' : "\\'";
+  });
 }
 
 fetchAndGenerateMdx();

@@ -9,7 +9,7 @@ dotenv.config();
 // Setup SQLite Database
 async function setupDatabase() {
   return new Promise((resolve, reject) => {
-    const db = new sqlite3.Database("./src/data/data.db", (err) => {
+    const db = new sqlite3.Database("./data/data.db", (err) => {
       if (err) {
         return reject(err);
       }

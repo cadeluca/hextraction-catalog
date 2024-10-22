@@ -5,9 +5,10 @@
   "description": "Hextraction Catalog",
   "type": "module",
   "scripts": {
-    "gen:mdx": "node ./src/data/generateMdxFiles.js",
-    "gen:db": "node ./src/data/readCatalog.js",
-    "build": "npm run gen:db && npm run gen:mdx && next build",
+    "gen:mdx": "node ./data/generateMdxFiles.js",
+    "gen:db": "node ./data/readCatalog.js",
+    "build:full": "npm run gen:db && run gen:mdx && next build",
+    "build:lite": "next build",
     "clean": "rimraf .next .turbo",
     "dev": "next",
     "start": "next start"

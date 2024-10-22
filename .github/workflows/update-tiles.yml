@@ -1,0 +1,52 @@
+name: Update Tiles
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-db:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Detect package manager
+      id: detect-package-manager
+      run: |
+        if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+          echo "manager=yarn" >> $GITHUB_OUTPUT
+          echo "command=install" >> $GITHUB_OUTPUT
+          echo "runner=yarn" >> $GITHUB_OUTPUT
+          exit 0
+        elif [ -f "${{ github.workspace }}/package.json" ]; then
+          echo "manager=npm" >> $GITHUB_OUTPUT
+          echo "command=ci" >> $GITHUB_OUTPUT
+          echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+          exit 0
+        else
+          echo "Unable to determine package manager"
+          exit 1
+        fi
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+        cache: ${{ steps.detect-package-manager.outputs.manager }}
+    - name: Install Dependencies
+      run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+    - name: Generate DB
+      run: ${{ steps.detect-package-manager.outputs.runner }} npm run gen:db
+      env:
+        SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+        SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+    - name: Generate MDX
+      run: ${{ steps.detect-package-manager.outputs.runner }} npm run gen:mdx
+    - name: Commit Changes
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "action@github.com"
+        git add ./data/data.db
+        git add ./pages/tiles/*
+        git commit -m "Update tiles via GitHub Actions" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
