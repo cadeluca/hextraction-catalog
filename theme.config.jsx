@@ -2,10 +2,9 @@ import { useConfig } from "nextra-theme-docs";
 
 export default {
   logo: <span>Hextraction Catalog</span>,
-  // banner: {
-  //   content: 'Nextra 2 Alpha',
-  //   key: 'Nextra 2'
-  // },
+  project: {
+    link: 'https://github.com/cadeluca/hextraction-catalog',
+  },
   search: {
     placeholder: "Search...",
   },
