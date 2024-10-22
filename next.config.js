@@ -5,8 +5,9 @@ const withNextra = nextra({
   themeConfig: './theme.config.jsx',
 })
 
-const isProduction = process.env.NODE_ENV === "production";
-const assetPrefix = isProduction ? "/hextaction-catalog" : "";
+// const isProduction = process.env.NODE_ENV === "production";
+// const assetPrefix = isProduction ? "/hextraction-catalog" : "";
+const assetPrefix = "/hextraction-catalog"
 
 const nextConfig = {
   images: {

@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "description": "Hextraction Catalog",
+  "repository": "https://github.com/cadeluca/hextraction-catalog",
   "type": "module",
   "scripts": {
     "gen:mdx": "node ./data/generateMdxFiles.js",
