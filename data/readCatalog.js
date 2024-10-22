@@ -126,9 +126,8 @@ async function main() {
 
   const sheets = google.sheets({ version: "v4", auth });
 
-  const spreadsheetId = process.env.SPREADSHEET_ID; // Replace with your spreadsheet ID
-  const range = "Master!A3:AC"; // Define the range
-  // const range = "Master!A349:AC349"; // Define the range
+  const spreadsheetId = process.env.SPREADSHEET_ID;
+  const range = "Master!A3:AC";
 
   try {
     // Fetch data from Google Sheets
