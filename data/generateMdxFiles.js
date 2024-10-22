@@ -41,7 +41,7 @@ function generateContent(row) {
   // console.log(escapedName)
 
   return `---
-sidebarTitle: "${escapedName}"
+title: "${escapedName}"
 ---
 
 temporary text:
