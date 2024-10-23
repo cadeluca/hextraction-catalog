@@ -1,6 +1,6 @@
 # Hextraction Catalog
 
-Under construction! Hello World
+Under construction!
 
 ## License
 
