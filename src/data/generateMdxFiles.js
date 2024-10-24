@@ -2,11 +2,10 @@ import fs from "fs";
 import sqlite3 from "sqlite3";
 import path from "path";
 
-// todo: generate image if applicable?
-const db = new sqlite3.Database("./data/data.db");
+const db = new sqlite3.Database("./src/data/data.db");
 
 async function fetchAndGenerateMdx() {
-  const tilesDir = path.join("./pages/tiles");
+  const tilesDir = path.join("./src/pages/tiles");
   fs.rmSync(tilesDir, { recursive: true, force: true });
   // should always be true
   if (!fs.existsSync(tilesDir)) {
@@ -37,23 +36,14 @@ async function fetchAndGenerateMdx() {
 
 function generateContent(row) {
   const escapedName = row.name;
-  // const escapedName = escapeQuotes(row.name);
-  // console.log(escapedName)
 
   return `---
 title: "${escapedName}"
 ---
-
-temporary text:
 # ${row.name}
+
 ${row.id}
 `;
-}
-
-function escapeQuotes(str) {
-  return str.replace(/['"]/g, (match) => {
-    return match === '"' ? '\\"' : "\\'";
-  });
 }
 
 fetchAndGenerateMdx();

@@ -1,5 +1,11 @@
 export default {
-  about: "About",
+  index: {
+    title: "About",
+    theme: {
+      breadcrumb: false,
+      pagination: false,
+    }
+  },
   "--- How to Play": {
     type: "separator",
     title: "How to Play",
@@ -9,13 +15,13 @@ export default {
     href: "https://www.playhextraction.com/tedious-rules",
     newWindow: true,
   },
-  community_rules: "Community Rulesets",
+  rulesets: "Community Rulesets",
   "--- Tile Catalog": {
     type: "separator",
     title: "Tile Catalog",
   },
-  index: {
-    title: "Gallery",
+  tile_table: {
+    title: "Tile Table",
     theme: {
       layout: "full",
     },
@@ -25,5 +31,15 @@ export default {
     href: "https://docs.google.com/spreadsheets/d/1JfqIVOjToIS0rCQC8AIWeRLpMmSNDphn8_660eaTjaY/edit?gid=414788452#gid=414788452",
     newWindow: true,
   },
-  tiles: "Tiles",
+  tiles: {
+    title: "Tiles",
+    theme: {
+      toc: false
+    },
+  },
+  "--- Contributing": {
+    type: "separator",
+    title: "Contributing",
+  },
+  contributing: "Contributing"
 };

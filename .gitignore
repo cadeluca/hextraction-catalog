@@ -1,16 +1,15 @@
 # dependencies
-/node_modules
+node_modules/
 
 # env
 .env
 
 # next.js
-/.next/
-/out/
-
-# production
-/build
+.next/
+out/
+build/
 
 # misc
 .DS_Store
 .vscode
+.eslintcache

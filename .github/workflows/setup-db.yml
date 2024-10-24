@@ -1,10 +1,10 @@
-name: Update Tiles
+name: Setup SQLite Database
 
 on:
   workflow_dispatch:
 
 jobs:
-  update-tiles:
+  setup-db:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -15,20 +15,13 @@ jobs:
         node-version: "20"
     - name: Install Dependencies
       run: npm install
-    - name: Update DB from spreadsheet & scrape images
-      run: npm run gen:data
-      env:
-        SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-        SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-    - name: Generate MDX files for tiles
-      run: npm run gen:mdx
+    - name: Generate DB
+      run: npm run gen:db
     - name: Commit Changes
       run: |
         git config --local user.name "GitHub Actions"
         git config --local user.email "action@github.com"
         git add ./src/data/data.db
-        git add ./src/pages/tiles/*
-        git add ./src/public/images/tiles/*
         git commit -m "Update tiles via GitHub Actions" || echo "No changes to commit"
         git push
       env:
