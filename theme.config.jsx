@@ -1,6 +1,4 @@
 import { useConfig } from "nextra-theme-docs";
-import ThemeColorSelector from "@/components/color-selector";
-import { ColorDropdown } from "@/components/color-dropdown";
 
 //todo logo, actual favicon not just a glyph
 
@@ -11,8 +9,7 @@ export default {
   },
   docsRepositoryBase:
     "https://github.com/cadeluca/hextraction-catalog/tree/main",
-  //todo would be fun to have a color picker component for people to pick whatever
-  //this would get stored in localStorage, but not needed for v1
+  //todo decide on a color theme
   // color {
   //   hue:
   // }
@@ -39,18 +36,6 @@ export default {
   feedback: {
     content: "Have a question? Submit an issue →",
     labels: "question",
-  },
-  navbar: {
-    extraContent: (
-      <>
-        {/* Default Theme Switcher */}
-        <ColorDropdown />
-        {/* <button>Hi!</button> */}
-        <ThemeColorSelector></ThemeColorSelector>
-        {/* Insert your custom Color Switcher */}
-        {/* <MyColorSwitcher /> */}
-      </>
-    ),
   },
   footer: {
     content: (
