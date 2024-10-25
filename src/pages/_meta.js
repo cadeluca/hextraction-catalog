@@ -41,5 +41,6 @@ export default {
     type: "separator",
     title: "Contributing",
   },
-  contributing: "Contributing"
+  markdown_and_nextra: "Markdown & Nextra",
+  code: "Code"
 };
