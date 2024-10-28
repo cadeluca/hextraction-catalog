@@ -13,6 +13,7 @@ const sep = path.sep === "/" ? "/" : "\\\\";
 const ALLOWED_SVG_REGEX = new RegExp(`src${sep}components${sep}icons${sep}.+\\.svg$`);
 
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     unoptimized: true,
   },
