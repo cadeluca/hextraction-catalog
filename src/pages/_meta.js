@@ -4,7 +4,7 @@ export default {
     theme: {
       breadcrumb: false,
       pagination: false,
-    }
+    },
   },
   "--- How to Play": {
     type: "separator",
@@ -24,6 +24,8 @@ export default {
     title: "Tile Table",
     theme: {
       layout: "full",
+      toc: false,
+      sidebar: false,
     },
   },
   community_catalog: {
@@ -34,7 +36,7 @@ export default {
   tiles: {
     title: "Tiles",
     theme: {
-      toc: false
+      toc: false,
     },
   },
   "--- Contributing": {
@@ -42,5 +44,5 @@ export default {
     title: "Contributing",
   },
   markdown_and_nextra: "Markdown & Nextra",
-  code: "Code"
+  code: "Code",
 };

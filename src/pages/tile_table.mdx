@@ -1,5 +1,17 @@
-# About
+import NextraTable from "../components/NextraTable";
+import TakeMeBackButton from "../components/TakeMeBack";
+import { getTiles } from "../data/db";
 
+export async function getStaticProps() {
+  const data = await getTiles();
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
-# todo
+# Tile Table
 
+<TakeMeBackButton />
+<NextraTable data={props.data} />
