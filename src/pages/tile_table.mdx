@@ -1,6 +1,7 @@
-import NextraTable from "../components/NextraTable";
+import TileTable from "../components/TileTable";
 import TakeMeBackButton from "../components/TakeMeBack";
 import { getTiles } from "../data/db";
+import { Callout } from "nextra/components";
 
 export async function getStaticProps() {
   const data = await getTiles();
@@ -13,5 +14,7 @@ export async function getStaticProps() {
 
 # Tile Table
 
-<TakeMeBackButton />
-<NextraTable data={props.data} />
+<Callout type="warning" emoji="⚠️">
+  This Table component is still a work in progress. Visuals and features may change over time. Mobile/small screen layout is likely to have issues. Bug reports and contributions are welcome!
+</Callout>
+<TileTable data={props.data} />
