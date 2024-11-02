@@ -53,7 +53,7 @@ export default {
     const config = useConfig();
     const title = `${config.title} – Hextraction Catalog`;
     const description = config.frontMatter.description || "Hextraction Catalog";
-    const image = config.frontMatter.image || "https://nextra.site/og.jpeg"; //todo
+    // const image = config.frontMatter.image || "https://nextra.site/og.jpeg"; //todo
     return (
       <>
         <title>{title}</title>
