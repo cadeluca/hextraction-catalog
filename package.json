@@ -9,7 +9,8 @@
     "gen:mdx": "node ./src/data/generateMdxFiles.js",
     "gen:data": "node ./src/data/updateTiles.js",
     "gen:db": "node ./src/data/setupDb.js",
-    "build:full": "npm run gen:db && gen:data && run gen:mdx && next build",
+    "gen:full": "npm run gen:db && gen:data && run gen:mdx",
+    "build:full": "npm run gen:full && next build",
     "build": "next build",
     "dev": "next",
     "start": "next start"

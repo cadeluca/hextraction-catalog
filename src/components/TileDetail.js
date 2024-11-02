@@ -1,6 +1,6 @@
 import React from "react";
 
-// This would typically come from an API or database
+// had AI generate me random sample props for this
 const gameProperties = {
   mechanics: {
     generic: { name: "Generic", checked: true },
@@ -98,7 +98,7 @@ export default function TileDetail() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
-                    fontSize: '0.75rem', 
+                    fontSize: '0.75rem',
                     fontWeight: 'bold',
                   }}>
                     {property.checked ? '✓' : ''}

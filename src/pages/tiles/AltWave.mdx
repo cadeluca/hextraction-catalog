@@ -1,0 +1,118 @@
+---
+title: "AltWave"
+---
+
+import { Cards } from "nextra/components";
+import { BoxIcon, AccountIcon } from "../../components/icons";
+import HorizontalGrid from '../../components/HorizontalGrid';
+import HorizontalGrid2 from '../../components/HorizontalGrid2';
+import CardBox from '../../components/CardBox';
+
+
+# AltWave
+
+<Cards>
+  <Cards.Card
+    icon={<BoxIcon />}
+    title="Model Page"
+    href="https://than.gs/m/1031259"
+  />
+  <Cards.Card
+    icon={<AccountIcon />}
+    title="Author"
+    href="https://thangs.com/designer/NoStepOnDeez"
+  />
+</Cards>
+
+## Visual Example 1 (checked feels a bit hard to read)
+
+| Key | Value |
+|-----|-------|
+| Generic | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Combo | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Dispenser | <ul><li><input disabled checked type="checkbox" /></li></ul>|
+| Hole | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Jump | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Layer | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Mechanical | <ul><li><input disabled checked type="checkbox" /></li></ul>|
+| No Path | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Secret | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Trap | <ul><li><input disabled checked type="checkbox" /></li></ul>|
+| On Play/Setup | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Trigger | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| On Destroy | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Ongoing | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Alters Tile(s) | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Alters Ball(s) | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Alters Hand(s) | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Alters Turn(s) | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Forbidden | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Novelty | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Premium | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Unique | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Virtual | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Board | <ul><li><input disabled  type="checkbox" /></li></ul>|
+| Accessory | <ul><li><input disabled  type="checkbox" /></li></ul>|
+
+## Visual Example 2 (just info dumped in a grid layout)
+
+<HorizontalGrid items={["Generic ","Combo ","Dispenser ✓","Hole ","Jump ","Layer ","Mechanical ✓","No Path ","Secret ","Trap ✓","On Play/Setup ","Trigger ","On Destroy ","Ongoing ","Alters Tile(s) ","Alters Ball(s) ","Alters Hand(s) ","Alters Turn(s) ","Forbidden ","Novelty ","Premium ","Unique ","Virtual ","Board ","Accessory "]} />
+
+## Visual Example 3 (separate my higher level tag)
+
+### Mechanics
+<HorizontalGrid2 data={{
+  "generic": "",
+  "combo": "",
+  "dispenser": "✓",
+  "hole": "",
+  "jump": "",
+  "layer": "",
+  "mechanical": "✓",
+  "no_path": "",
+  "secret": "",
+  "trap": "✓"
+}} />
+
+### Cause
+<HorizontalGrid2 data={{
+  "on_play_setup": "",
+  "trigger": "",
+  "on_destroy": "",
+  "ongoing": ""
+}} />
+
+### Action
+<HorizontalGrid2 data={{
+  "alters_tiles": "",
+  "alters_balls": "",
+  "alters_hands": "",
+  "alters_turns": ""
+}} />
+
+### Special
+<HorizontalGrid2 data={{
+  "forbidden": "",
+  "novelty": "",
+  "premium": "",
+  "is_unique": "",
+  "virtual": ""
+}} />
+
+### Components
+<HorizontalGrid2 data={{
+  "board": "",
+  "accessory": ""
+}} />
+---
+
+## Visual Example 4 (Card style)
+<CardBox data={{
+  "forbidden": "",
+  "novelty": "",
+  "premium": "",
+  "is_unique": "",
+  "virtual": ""
+}} />
+
+Pictures (for thangs.com models) will be scraped.

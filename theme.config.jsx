@@ -1,4 +1,5 @@
 import { useConfig } from "nextra-theme-docs";
+import Link from "next/link";
 
 //todo logo, actual favicon not just a glyph
 
@@ -13,11 +14,10 @@ export default {
   // color {
   //   hue:
   // }
-  //todo: link to official discord, specifically the channel
-  // chat: {
-  //   link: "the discord link here",
-  //   // defaults icon to discord if no "icon" prop provided
-  // }
+  chat: {
+    link: "https://discord.com/invite/voidstarlab",
+    // defaults icon to discord if no "icon" prop provided
+  },
   search: {
     placeholder: "Search...",
   },
@@ -29,7 +29,7 @@ export default {
     toggleButton: true,
     defaultMenuCollapseLevel: 0,
   },
-  //todo see true v false for this config
+  //todo see true vs false for this config
   // toc: {
   //   float: false,
   // }
@@ -42,7 +42,7 @@ export default {
       <span>
         {/* <div className="flex w-full flex-col items-center sm:items-start"> */}
         {/* <p className="mt-6 text-xs"> */}
-        MIT {new Date().getFullYear()} © Hextraction Catalog
+        MIT {new Date().getFullYear()} © Hextraction Catalog, a project by <Link href={"https://github.com/cadeluca"}>cadeluca</Link>
         {/* </p> */}
         {/* </div> */}
       </span>

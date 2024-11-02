@@ -1,6 +1,6 @@
 import React from 'react';
 
-// HorizontalGrid component
+// might trash this or hg1, todo land on one component
 const HorizontalGrid2 = ({ data }) => {
   return (
     <div style={{

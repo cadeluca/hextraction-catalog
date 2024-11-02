@@ -20,7 +20,9 @@ import {
 } from "@tanstack/react-table";
 import { rankItem } from "@tanstack/match-sorter-utils";
 
-// Define a custom fuzzy filter function that will apply ranking info to rows (using match-sorter utils)
+// todo: heavily clean up this component
+
+// define a custom fuzzy filter function that will apply ranking info to rows (using match-sorter utils)
 const fuzzyFilter = (row, columnId, value, addMeta) => {
   const itemRank = rankItem(row.getValue(columnId), value);
   addMeta({ itemRank });

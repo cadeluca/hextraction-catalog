@@ -6,6 +6,12 @@ export default {
       pagination: false,
     },
   },
+  contributing: {
+    title: "Contributing",
+    theme: {
+      breadcrumb: false,
+    },
+  },
   "--- How to Play": {
     type: "separator",
     title: "How to Play",
@@ -39,10 +45,4 @@ export default {
       toc: false,
     },
   },
-  "--- Contributing": {
-    type: "separator",
-    title: "Contributing",
-  },
-  markdown_and_nextra: "Markdown & Nextra",
-  code: "Code",
 };

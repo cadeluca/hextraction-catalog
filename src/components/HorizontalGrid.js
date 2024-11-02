@@ -1,7 +1,6 @@
-// components/HorizontalGrid.js
-
 import React from "react";
 
+// might trash this or hg2, todo land on one component
 const HorizontalGrid = ({ items }) => {
   return (
     <div
