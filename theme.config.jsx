@@ -60,7 +60,7 @@ export default {
         <meta property="og:title" content={title} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta name="og:image" content={image} />
+        {/* <meta name="og:image" content={image} /> */}
         <meta name="msapplication-TileColor" content="#fff" />
         <meta httpEquiv="Content-Language" content="en" />
       </>
