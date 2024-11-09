@@ -157,7 +157,7 @@ export default function TileTable({ data }) {
               return (
                 <div style={{ minWidth: `${size}px` }}>
                   <button
-                    className={"_flex _flex-row _items-center "}
+                    className={"flex flex-row items-center "}
                     // className={"_flex _flex-row _items-center _ml-auto _rounded-lg nextra-focus _flex _rounded _px-2 _py-1.5 _text-sm _transition-colors [word-break:break-word] _cursor-pointer contrast-more:_border _text-gray-500 hover:_bg-gray-100 hover:_text-gray-900 dark:_text-neutral-400 dark:hover:_bg-primary-100/5 dark:hover:_text-gray-50 contrast-more:_text-gray-900 contrast-more:dark:_text-gray-50 contrast-more:_border-transparent contrast-more:hover:_border-gray-900 contrast-more:dark:hover:_border-gray-50"}
                     onClick={() =>
                       column.toggleSorting(column.getIsSorted() === "asc")
