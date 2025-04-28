@@ -20,6 +20,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/match-sorter-utils": "^8.19.4",
     "@tanstack/react-table": "^8.21.3",
     "dotenv": "^16.4.5",
     "googleapis": "^144.0.0",
