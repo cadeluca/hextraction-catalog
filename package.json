@@ -20,6 +20,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.21.3",
     "dotenv": "^16.4.5",
     "googleapis": "^144.0.0",
     "lucide": "^0.479.0",
