@@ -1,0 +1,18 @@
+import TileTable from "@/components/TileTable";
+import { getTiles } from "@/data/db";
+import { Callout } from "nextra/components";
+
+export async function getData() {
+    const tiles = await getTiles();
+    console.log(tiles);
+    return tiles;
+}
+
+# Tile Table
+
+<Callout type="warning" emoji="⚠️">
+    This Table component is buggy and heavily a work in progress! Please refrain from submitting reports until this banner goes away.
+    Visuals and features may change over time. Mobile/small screen layout is likely to have issues.
+</Callout>
+
+<TileTable data={await getData()} />

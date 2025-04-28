@@ -21,24 +21,32 @@ const ExternalLink = ({ children }) => {
 export default {
   index: {
     type: 'page',
-    display: 'hidden'
-  },
-  about: {
-    type: 'page',
+    display: 'hidden',
     theme: {
       typesetting: 'article'
     }
   },
   contributing: {
-    type: 'page'
-  },
-  'how-to-play': {
     type: 'page',
-    title: 'how to play',
+    theme: {
+      typesetting: 'article'
+    }
+  },
+  'ways-to-play': {
+    type: 'page',
+    // items: {
+    //   index: '',
+    // }
+  },
+  'tiles': {
+    type: 'page',
     items: {
-      index: '',
-      rules: {
-        items: ''
+      'tile-table': {
+        theme: {
+          layout: "full",
+          toc: false,
+          sidebar: false,
+        },
       }
     }
   },

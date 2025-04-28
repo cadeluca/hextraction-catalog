@@ -13,5 +13,7 @@ export async function getTiles() {
   const db = await openDb();
   const items = await db.all('SELECT * FROM tiles');
   await db.close();
+
+  console.log("my items", items)
   return items;
 }

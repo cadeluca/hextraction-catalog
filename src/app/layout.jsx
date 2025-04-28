@@ -1,7 +1,7 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Banner, Search, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
-import { HexIcon } from '@/components/icons'
+// import { HexIcon } from '@/components/icons'
 import './globals.css'
 
 export const metadata = {
@@ -9,8 +9,7 @@ export const metadata = {
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 }
 
-
-const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>
+const banner = <Banner storageKey="some-key">This site is pre-v1, please submit suggestions or feedback through github!</Banner>
 const navbar = (
   <Navbar
     logo={<span>⬣ Hextraction Catalog</span>}
@@ -23,13 +22,14 @@ const navbar = (
 const footer = <Footer>MIT {new Date().getFullYear()} © Hextraction Catalog, a project by cadeluca.</Footer>
 
 const search = <Search
-  placeholder="looking..."
+  placeholder="Search..."
 />
 
 export default async function RootLayout({ children }) {
   return (
     <html
       // Not required, but good for SEO
+      // title={`${children.title} – Hextraction Catalog`}
       lang="en"
       // Required to be set
       dir="ltr"
@@ -51,7 +51,7 @@ export default async function RootLayout({ children }) {
         }}
       >
         {/* <link rel="shortcut icon" href="./components/icons/icon.svg"/> */}
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+        {/* additional tags should be passed as `children` of `<Head>` element */}
       </Head>
       <body>
         <Layout
@@ -69,12 +69,12 @@ export default async function RootLayout({ children }) {
           }}
           toc={{
             backToTop: true,
-            title: "my contents yo",
-            extraContent: "my extra content",
+            // title: "uncomment to make this the TOC title",
+            // extraContent: "uncomment to add extra content",
             float: false // todo verify this behavior
           }}
           feedback={{
-            content: "Have a question or comment? Give us feedback",
+            content: `Have a question or comment? Give us feedback`,
             labels: "feedback",
           }}
           //notfoundpage -> labels, content

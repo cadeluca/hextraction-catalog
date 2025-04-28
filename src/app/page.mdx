@@ -1,22 +1,43 @@
-import { AccountIcon } from '@/components/icons'
+---
+sidebarTitle: About
+---
 
-# Index maybe
+import { Callout } from "nextra/components";
 
-i hope so
+# About
 
-<div
-className="x:rounded-lg x:px-3 x:py-2 x:transition-colors x:w-full x:md:w-64
-x:text-base x:leading-tight x:md:text-sm x:bg-black/[.05] x:dark:bg-gray-50/10 x:placeholder:text-gray-500 x:dark:placeholder:text-gray-400 x:contrast-more:border x:contrast-more:border-current x:[&::-webkit-search-cancel-button]:appearance-none"
->hi</div>
+Welcome to the Hextraction Catalog! This site is under development by [cadeluca](https://github.com/cadeluca).
 
-<div
-className="rounded-lg px-3 py-2 transition-colors w-full md:w-64 text-base leading-tight md:text-sm bg-black/[.05] dark:bg-gray-50/10 placeholder:text-gray-500 dark:placeholder:text-gray-400 contrast-more:border contrast-more:border-current [&::-webkit-search-cancel-button]:appearance-none"
->hi 2</div>
+## What's all this about?
 
-<h1 className="text-3xl font-bold underline">
-    Hello world!
-</h1>
+### The Game
 
-<div>
-{/* <AccountIcon /> */}
-</div>
+Hextraction is a free, open source board game designed for 3D printing by [Zack Freedman](https://www.youtube.com/@ZackFreedman).
+You can read more about it on the [official site](https://www.playhextraction.com/what-in-tarnation).
+Please note that this site is purely a community effort and not directly affiliated with Zack or Voidstar Lab.
+If you have questions about the game, for example how to get started printing the game, the Voidstar Lab [Discord](https://discord.com/invite/voidstarlab) is the ideal place. The Discord server is also linked in the site's navigation bar.
+
+### This Site
+
+This site assumes you have a basic understanding of the game.
+The goal is to make it easy to browse new ways to play and search the countless community tiles to play with! Individual tile pages are generated from data - these pages are in the very early stages. You can explore the full list via the Tile Table.
+
+<Callout emoji="🚧">
+  The Tile Table [experimental] is [live](/tile_table) - give it a try and share
+  your feedback!
+</Callout>
+
+This site is developed using Nextra, a documentation framework built with Next.js.
+Check out the GitHub page to see the source, ask questions pertaining to the site,
+report bugs, and more.
+
+### Parsing the Data
+
+The data is sourced from the [Community Catalog](https://docs.google.com/spreadsheets/d/1JfqIVOjToIS0rCQC8AIWeRLpMmSNDphn8_660eaTjaY/edit?gid=414788452#gid=414788452&fvid=104313283).
+It is highly encouraged if you are a tile maker that you add your tiles to the sheet.
+Please be respectful of the formatting set by the sheet maintainers!
+
+<Callout type="info" emoji="🕑">
+  To be enabled soon: auto updates via cronjob (in github actions) once the tile
+  page design has more detail.
+</Callout>
