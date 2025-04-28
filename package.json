@@ -1,10 +1,12 @@
 {
   "name": "hextraction-catalog",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hextraction Catalog",
   "repository": "https://github.com/cadeluca/hextraction-catalog",
   "type": "module",
+  "author": "cadeluca",
+  "license": "MIT",
   "scripts": {
     "gen:mdx": "node ./src/data/generateMdxFiles.js",
     "gen:data": "node ./src/data/updateTiles.js",
@@ -12,40 +14,32 @@
     "gen:full": "npm run gen:db && gen:data && run gen:mdx",
     "build:full": "npm run gen:full && next build",
     "build": "next build",
-    "dev": "next",
-    "start": "next start"
+    "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path public/_pagefind",
+    "dev": "next --turbopack",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@napi-rs/simple-git-linux-x64-gnu": "^0.1.19",
-    "@radix-ui/react-icons": "^1.3.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@tanstack/match-sorter-utils": "^8.19.4",
-    "@tanstack/react-table": "^8.20.5",
     "dotenv": "^16.4.5",
     "googleapis": "^144.0.0",
-    "lucide-react": "^0.453.0",
-    "next": "^14.2.5",
-    "nextra": "^3.0.11",
-    "nextra-theme-docs": "3.0.11*",
-    "puppeteer": "^23.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "lucide": "^0.479.0",
+    "lucide-react": "^0.479.0",
+    "next": "^15.3.1",
+    "nextra": "^4.2.17",
+    "nextra-theme-docs": "^4.2.17",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   },
-  "dependenciesMeta": {
-    "nextra": {
-      "injected": true
-    },
-    "nextra-theme-docs": {
-      "injected": true
-    }
-  },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "4.1.4",
     "@types/node": "22.8.1",
+    "@types/react": "19.0.10",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "next-sitemap": "^4.2.3",
+    "pagefind": "^1.3.0",
+    "tailwindcss": "^4.1.4"
   }
 }
